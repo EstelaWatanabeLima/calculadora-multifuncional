@@ -19,7 +19,6 @@ group: pages
 cancel-in-progress: false
 
 jobs:
-
 verificar-projeto:
 name: Verificar projeto
 runs-on: ubuntu-latest
@@ -41,13 +40,7 @@ echo "Todos os arquivos foram encontrados!"
 publicar:
 name: Publicar no GitHub Pages
 needs: verificar-projeto
-if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-
 runs-on: ubuntu-latest
-
-environment:
-name: github-pages
-url: ${{ steps.deployment.outputs.page_url }}
 
 steps:
 - name: Baixar o código do projeto
@@ -57,7 +50,7 @@ uses: actions/checkout@v4
 uses: actions/configure-pages@v5
 
 - name: Preparar arquivos do site
-uses: actions/upload-pages-artifact@v4
+uses: actions/upload-pages-artifact@v3
 with:
 path: .
 
