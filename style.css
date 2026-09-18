@@ -1,98 +1,12 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{font-family:'Inter',Arial,sans-serif;color:#eef2ff;background:#0b1020}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:24px;background:radial-gradient(circle at 15% 15%,#283b78 0,transparent 32%),radial-gradient(circle at 85% 85%,#3b1f67 0,transparent 30%),#0b1020}
+.calculadora{width:min(430px,100%);padding:30px;border:1px solid rgba(255,255,255,.12);border-radius:28px;background:rgba(17,24,43,.88);box-shadow:0 25px 70px rgba(0,0,0,.42);backdrop-filter:blur(18px)}
+.topo{display:flex;align-items:center;gap:14px}.icone{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:24px;background:linear-gradient(135deg,#7c5cff,#35c9ff);box-shadow:0 10px 25px rgba(73,91,255,.3)}
+.eyebrow{font-size:10px;letter-spacing:2px;font-weight:800;color:#8e9abc;margin-bottom:3px}h1{font-size:26px;line-height:1.1;font-weight:800;color:#fff}.subtitulo{margin:10px 0 24px;color:#9ba7c2;font-size:13px}
+.entradas{display:grid;grid-template-columns:1fr 1fr;gap:12px}.campo label{display:block;margin-bottom:7px;font-size:12px;font-weight:600;color:#aeb8cf}.campo input{width:100%;padding:14px 13px;border:1px solid #303b59;border-radius:13px;background:#0e1528;color:#fff;outline:none;font-size:16px;transition:.2s}.campo input::placeholder{color:#4f5a73}.campo input:focus{border-color:#6e83ff;box-shadow:0 0 0 3px rgba(110,131,255,.13)}
+.botoes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}button{border:1px solid #303b59;border-radius:13px;padding:13px 10px;background:#18223b;color:#eef2ff;font:600 13px 'Inter',sans-serif;cursor:pointer;transition:transform .15s,background .15s,border-color .15s}button span{font-size:17px;vertical-align:-1px;margin-right:5px}button:hover{transform:translateY(-2px);background:#222e4c;border-color:#50628d}button:active{transform:translateY(0)}.btn-ce{grid-column:span 2;background:#261d35;border-color:#5b416f;color:#e7d9f5}.btn-ce:hover{background:#322342;border-color:#7c5a96}
+.resultado-card{margin-top:18px;padding:18px 20px;border-radius:17px;background:linear-gradient(135deg,rgba(82,100,255,.17),rgba(58,207,255,.08));border:1px solid rgba(125,145,255,.2)}.resultado-card p{font-size:10px;letter-spacing:1.7px;font-weight:800;color:#8292c0;margin-bottom:8px}.resultado-card h2{font-size:20px;line-height:1.3;color:#fff;overflow-wrap:anywhere}footer{text-align:center;margin-top:20px;color:#58647e;font-size:10px}
+@media(max-width:420px){.calculadora{padding:22px;border-radius:23px}.entradas{grid-template-columns:1fr}.botoes{gap:8px}}
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: #eef2f3;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    height:100vh;
-}
-
-.calculadora{
-    background:white;
-    padding:30px;
-
-    width:350px;
-
-    border-radius:12px;
-
-    box-shadow: 0px 4px 15px rgba(0,0,0,.15);
-}
-
-h1{
-    text-align:center;
-    margin-bottom:20px;
-    color: #333;
-    font-size: 22px;
-}
-
-label{
-    display:block;
-    margin-top:15px;
-    font-weight: bold;
-    color: #555;
-}
-
-input{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-}
-
-.botoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-
-    margin-top: 20px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.btn-ce {
-    background-color: #dc3545;
-    grid-column: span 2;
-}
-
-.btn-ce:hover {
-    background-color: #a71d2a;
-}
-
-#resultado{
-    margin-top:25px;
-    text-align:center;
-    color: #222;
-}
-
-function somar() {
-    let numero1 = Number(document.getElementById("numero1").value);
-    let numero2 = Number(document.getElementById("numero2").value);
-
-    let resultado = numero1 + numero2;
-
-    document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
-}
 
